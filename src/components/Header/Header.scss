@@ -25,24 +25,3 @@ header {
     }
 }
 
-nav {
-    .nav__list{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-        &__element {
-            text-align: center;
-            min-width: 200px;
-            padding: 20px;
-            cursor: pointer;
-        }
-    }
-
-    .nav__bars {
-        font-size: 30px;
-        cursor: pointer;
-        padding: 5px;
-        margin-right: 20px;
-    }
-}
