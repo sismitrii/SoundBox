@@ -6,23 +6,40 @@ import {faVolumeHigh } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import './SoundItem.scss'
-import Sound from '../../assets/quotes/Battre.mp3'
+
 
 /*===========================================================*/
 /*-------------------------- Main ---------------------------*/
 /*===========================================================*/
-function SoundItem(){
+function SoundItem(props){
+    const {data} = props
+    const audio = new Audio(data.sound)
+
+    function handlePlay(){
+        audio.currentTime = 0;
+        audio.play()
+    }
+
     return(
-    <article className="sound">
+    <article 
+        tabIndex="0"
+        aria-label={`${data.title} Press enter to play`}
+        className="sound"
+        onClick={()=>handlePlay()}
+        onKeyDown={(e)=>{
+            if (e.key === 'Enter'){
+                handlePlay();
+            }
+        }}
+    >
         <div className="sound__image">
             <FontAwesomeIcon icon={faVolumeHigh} />
             
         </div>
         <div className="sound__description">
-            <h2>Meilleur citation au monde</h2>
-            <h3>Best artiste</h3>
+            <h2>{data.title}</h2>
+            <h3>{data.author}</h3>
         </div>
-        <audio src={Sound}></audio>
     </article>)
 }
 
