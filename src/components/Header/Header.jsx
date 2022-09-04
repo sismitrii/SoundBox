@@ -2,14 +2,12 @@
 /*------------------------- Import --------------------------*/
 /*===========================================================*/
 
-import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
-
-import { AppContext } from "../../utils/context"
+import HeaderNav from "./HeaderNav"
 
 import Logo from '../../assets/SoundBoxLogo.png'
 import './Header.scss'
-import HeaderNav from "./HeaderNav/HeaderNav"
+
 
 
 /*===========================================================*/

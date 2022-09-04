@@ -3,12 +3,14 @@
 /*===========================================================*/
 import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { AppContext } from '../../../utils/context'
-
-import './HeaderNav.scss'
+import { AppContext } from '../../utils/context'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
+
+import './HeaderNav.scss'
+
+
 /*===========================================================*/
 /*-------------------------- Main ---------------------------*/
 /*===========================================================*/
