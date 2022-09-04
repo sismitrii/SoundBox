@@ -1,18 +1,24 @@
 /*===========================================================*/
 /*------------------------- Import --------------------------*/
 /*===========================================================*/
-import SearchBar from '../../components/Main/SearchBar'
-import Sounds from '../../components/Main/Sounds'
-import './Home.scss'
+
+import SoundItem from './SoundItem';
+import './Sounds.scss';
+
 /*===========================================================*/
 /*-------------------------- Main ---------------------------*/
 /*===========================================================*/
-function Home(){
+function Sounds(){
+
     return(
-    <main className="page-container">
-        <SearchBar />
-        <Sounds />
-    </main>)
+    <section className='sounds'>
+        {/* Ici on mettra un map  */}
+        <SoundItem />
+        <SoundItem />
+        <SoundItem />
+        <SoundItem />
+        <SoundItem />
+    </section>)
 }
 
-export default Home
+export default Sounds

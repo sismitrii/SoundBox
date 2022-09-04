@@ -1,0 +1,37 @@
+
+.sound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid red;
+    min-width: 320px;
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #DFDFDF;
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+
+        svg {
+            font-size: 30px;
+        }
+    }
+
+    &__description {
+        width: 80%;
+
+        h2{
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+    
+        h3 {
+            font-size: 15px;
+            font-weight: 400;
+        }
+    }
+}
