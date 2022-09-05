@@ -15,15 +15,18 @@ import './SoundItem.scss'
 function SoundItem(props){
     const [isPlaying, setIsPlaying] = useState(false)
     const {data} = props
-    const audio = new Audio(data.sound)
+    const audio = new Audio(data.sound);
 
+    
     function handlePlay(){
-        audio.currentTime = 0;
-        audio.play()
-        setIsPlaying(true);
-        setTimeout(()=>{
-            setIsPlaying(false);
-        },audio.duration * 1000)
+        if (isPlaying === false){
+            console.log(audio);
+            audio.play();
+            setIsPlaying(true);
+            setTimeout(()=>{
+                setIsPlaying(false);
+            },audio.duration * 1000)
+        }
     }
 
     return(
