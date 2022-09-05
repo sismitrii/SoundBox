@@ -1,19 +1,31 @@
+@import '../../utils/sass/utils/variables';
 
 .sound {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid red;
-    min-width: 320px;
+    min-width: 300px;
+    padding: 5px;
+    border-radius: 15px;
+    background : map-get($colors, pale_blue);
+
+    &.playing {
+        background: lighten(map-get($colors, tertiary), 10) ;
+    }
 
     &__image {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #DFDFDF;
+        background-color: lighten(map-get($colors, tertiary), 10);
         width: 200px;
         height: 200px;
         margin: 10px;
+
+        &.playing {
+            background : map-get($colors, pale_blue);
+
+        }
 
         svg {
             font-size: 30px;

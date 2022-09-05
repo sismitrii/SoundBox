@@ -4,6 +4,7 @@
 
 import {faVolumeHigh } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useState } from "react"
 
 import './SoundItem.scss'
 
@@ -12,19 +13,24 @@ import './SoundItem.scss'
 /*-------------------------- Main ---------------------------*/
 /*===========================================================*/
 function SoundItem(props){
+    const [isPlaying, setIsPlaying] = useState(false)
     const {data} = props
     const audio = new Audio(data.sound)
 
     function handlePlay(){
         audio.currentTime = 0;
         audio.play()
+        setIsPlaying(true);
+        setTimeout(()=>{
+            setIsPlaying(false);
+        },audio.duration * 1000)
     }
 
     return(
     <article 
         tabIndex="0"
         aria-label={`${data.title} Press enter to play`}
-        className="sound"
+        className={`sound ${isPlaying && 'playing'}`}
         onClick={()=>handlePlay()}
         onKeyDown={(e)=>{
             if (e.key === 'Enter'){
@@ -32,9 +38,8 @@ function SoundItem(props){
             }
         }}
     >
-        <div className="sound__image">
+        <div className={`sound__image ${isPlaying && 'playing'}`}>
             <FontAwesomeIcon icon={faVolumeHigh} />
-            
         </div>
         <div className="sound__description">
             <h2>{data.title}</h2>
